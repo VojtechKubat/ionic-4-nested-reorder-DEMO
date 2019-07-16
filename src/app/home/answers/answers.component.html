@@ -1,0 +1,12 @@
+<ion-reorder-group
+  disabled="false"
+  (ionItemReorder)="itemReorder($event)"
+>
+  <ion-item 
+    *ngFor="let current of this.answers; let i = index" 
+    class="answers"
+  >
+    <ion-label>{{ current }}</ion-label>
+    <ion-reorder slot="end" style="border: 2px solid black;"></ion-reorder>
+  </ion-item>
+</ion-reorder-group>

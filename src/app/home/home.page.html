@@ -1,0 +1,36 @@
+<ion-header>
+	<ion-toolbar color="primary">
+		<ion-title>
+			Ionic 4 template
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-reorder-group
+    (ionItemReorder)="itemReorder($event)"
+    disabled="false"
+    id="reorderQuestions"
+  >
+      <div 
+        *ngFor="let current of this.questions; let i = index" 
+        class="question"
+      >
+        <ion-item>
+          <ion-reorder slot="end" style="border: 2px solid black;"></ion-reorder>
+          <ion-label>{{ current.question }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <app-answers
+            style="width: 100%;"
+            [answers]=current.answers
+          ></app-answers>
+        </ion-item>
+        
+      </div>
+    
+  
+  </ion-reorder-group>
+
+</ion-content>
